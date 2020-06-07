@@ -310,7 +310,7 @@ class MapboxMapController extends ChangeNotifier {
   Future<Symbol> addSymbol(SymbolOptions options, [Map data]) async {
     final SymbolOptions effectiveOptions =
         SymbolOptions.defaultOptions.copyWith(options);
-    final symbol = await MapboxGlPlatform.instance.addSymbol(effectiveOptions);
+    final symbol = await MapboxGlPlatform.instance.addSymbol(effectiveOptions,data);
     _symbols[symbol.id] = symbol;
     notifyListeners();
     return symbol;
